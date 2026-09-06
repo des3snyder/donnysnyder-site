@@ -171,13 +171,14 @@
     }
     .prose p:last-child { margin-bottom: 0; }
 
-    .research-list { max-width: 820px; }
+    .research-list { max-width: 900px; }
     .research-item {
       display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      gap: 38px;
-      padding: 0 0 24px;
-      margin-bottom: 24px;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 34px;
+      align-items: center;
+      padding: 0 0 28px;
+      margin-bottom: 28px;
       border-bottom: 1px solid var(--line);
     }
     .research-item:last-child {
@@ -185,18 +186,33 @@
       padding-bottom: 0;
       border-bottom: 0;
     }
-    .research-item h3 {
-      margin: 0;
+    .research-copy h3 {
+      margin: 0 0 8px;
       font-family: var(--serif);
       font-size: 1.13rem;
       line-height: 1.42;
       font-weight: 600;
     }
-    .research-item p {
+    .research-copy p {
       margin: 0;
       color: var(--muted);
       font-size: .98rem;
       line-height: 1.62;
+    }
+    .research-figure {
+      margin: 0;
+      justify-self: end;
+      width: 100%;
+      max-width: 340px;
+    }
+    .research-figure img {
+      width: 100%;
+      max-height: 235px;
+      height: auto;
+      object-fit: contain;
+      border: 1px solid #e2e2e2;
+      border-radius: 4px;
+      background: #fff;
     }
 
     .publications-section { background: var(--soft); }
@@ -256,13 +272,24 @@
     .footer-links { display: flex; gap: 22px; align-items: center; }
     .footer-links a { text-decoration: none; }
 
+    @media (max-width: 900px) {
+      .research-item {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        align-items: start;
+      }
+      .research-figure {
+        justify-self: start;
+        max-width: 420px;
+      }
+    }
+
     @media (max-width: 850px) {
       .container { width: min(var(--max), calc(100% - 56px)); }
       .intro { grid-template-columns: minmax(0, 1fr) 230px; gap: 45px; min-height: 500px; }
       .portrait-wrap, .portrait { width: 230px; }
       .portrait { height: 300px; }
       .section-inner { grid-template-columns: 135px minmax(0,1fr); gap: 38px; }
-      .research-item { grid-template-columns: 1fr; gap: 7px; }
     }
 
     @media (max-width: 650px) {
@@ -344,16 +371,31 @@
         <h2 class="section-title">Research</h2>
         <div class="research-list">
           <div class="research-item">
-            <h3>Political communication &amp; media</h3>
-            <p>How campaigns, media environments, and political messages shape what people notice, understand, and believe.</p>
+            <div class="research-copy">
+              <h3>Political communication &amp; media</h3>
+              <p>How campaigns, media environments, and political messages shape what people notice, understand, and believe.</p>
+            </div>
+            <figure class="research-figure">
+              <img src="assets/research-wordcloud.png" alt="Word cloud of political media terms, with large words including Trump and Biden.">
+            </figure>
           </div>
           <div class="research-item">
-            <h3>Text-as-data &amp; artificial intelligence</h3>
-            <p>Using computational text analysis and machine learning to measure political language and media content at scale.</p>
+            <div class="research-copy">
+              <h3>Text-as-data &amp; artificial intelligence</h3>
+              <p>Using computational text analysis and machine learning to measure political language and media content at scale.</p>
+            </div>
+            <figure class="research-figure">
+              <img src="assets/research-human-machine.png" alt="Scatterplot comparing machine ensemble ratings with average human ratings.">
+            </figure>
           </div>
           <div class="research-item">
-            <h3>Political psychology &amp; polarization</h3>
-            <p>How identity, political cues, and social interactions shape partisan attachment, attitudes, and affective polarization.</p>
+            <div class="research-copy">
+              <h3>Political psychology &amp; polarization</h3>
+              <p>How identity, political cues, and social interactions shape partisan attachment, attitudes, and affective polarization.</p>
+            </div>
+            <figure class="research-figure">
+              <img src="assets/research-affpol-video.png" alt="Plot showing affective polarization by video condition across multiple experimental conditions.">
+            </figure>
           </div>
         </div>
       </div>

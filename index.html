@@ -142,9 +142,9 @@
     .content-section { border-top: 1px solid var(--line); }
     .section-inner {
       display: grid;
-      grid-template-columns: 116px minmax(0, 1fr);
-      gap: 14px;
-      padding: 36px 0 38px;
+      grid-template-columns: 125px minmax(0, 1fr);
+      gap: 18px;
+      padding: 45px 0 49px;
     }
     .section-title {
       margin: 2px 0 0;
@@ -201,13 +201,13 @@
       line-height: 1.62;
     }
     .research-figure {
-      margin: 0;
+      margin: 0 auto;
       width: 100%;
-      max-width: 800px;
+      max-width: 700px;
     }
     .research-figure img {
       width: 100%;
-      max-height: 430px;
+      max-height: 400px;
       height: auto;
       object-fit: contain;
       border: 1px solid #e2e2e2;
@@ -223,10 +223,10 @@
       text-align: left;
     }
     .research-figure.wordcloud-figure {
-      max-width: 720px;
+      max-width: 650px;
     }
     .research-figure.wordcloud-figure img {
-      max-height: 560px;
+      max-height: 510px;
     }
     .research-figure-title.wordcloud-title {
       font-size: 1.08rem;
@@ -312,7 +312,7 @@
       .intro { grid-template-columns: minmax(0, 1fr) 250px; gap: 35px; min-height: 450px; }
       .portrait-wrap, .portrait { width: 250px; }
       .portrait { height: 320px; }
-      .section-inner { grid-template-columns: 112px minmax(0,1fr); gap: 14px; }
+      .section-inner { grid-template-columns: 116px minmax(0,1fr); gap: 17px; }
     }
 
     @media (max-width: 650px) {
@@ -337,7 +337,7 @@
       .portrait { width: 210px; height: 270px; }
       h1 { font-size: clamp(2.8rem, 15vw, 4rem); }
       .intro-text { font-size: 1.2rem; }
-      .section-inner { grid-template-columns: 1fr; gap: 20px; padding: 36px 0 40px; }
+      .section-inner { grid-template-columns: 1fr; gap: 24px; padding: 43px 0 47px; }
       .section-title { font-size: 1.4rem; }
       .section-title::after { margin-top: 10px; }
       .pub-heading { font-size: 1.2rem; }
@@ -465,7 +465,7 @@
               </div>
               <div class="personalization-interactive">
                 <h4>Try the Personalization Measure</h4>
-                <p>To automate this measure, I fine-tuned a RoBERTa bounded-regression model on averaged ratings from three large language models, producing continuous personalization scores ranging from 1 (abstract) to 3 (personally grounded). Enter a political statement below to see how it rates on the personalization scale.</p>
+                <p>To automate this measure, I fine-tuned a RoBERTa bounded-regression model on averaged ratings from three large language models, producing continuous personalization scores ranging from 1 (abstract, ideological) to 3 (personal, close to home). Enter a political statement below to see how it rates on the personalization scale.</p>
                 <form id="personalization-form">
                   <label for="personalization-input">Political statement</label>
                   <textarea id="personalization-input" name="text" rows="2" maxlength="1500" placeholder="Enter a political statement..." required></textarea>
@@ -475,7 +475,7 @@
                 <div id="personalization-result" class="personalization-result" hidden>
                   <span>Predicted personalization score</span>
                   <strong id="personalization-score"></strong>
-                  <span>On a continuous scale from 1.00 (abstract) to 3.00 (personally grounded)</span>
+                  <span>On a continuous scale from 1.00 (abstract, ideological) to 3.00 (personal, close to home)</span>
                 </div>
               </div>
             </div>

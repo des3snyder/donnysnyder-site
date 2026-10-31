@@ -344,6 +344,41 @@
       .footer-row { min-height: 155px; align-items: flex-start; justify-content: center; flex-direction: column; gap: 10px; }
       .footer-links { flex-direction: column; align-items: flex-start; gap: 3px; }
     }
+
+    /* Scoped styles: Converse research demo only */
+    .personalization-module { max-width: 720px; margin-top: 30px; }
+    .personalization-quote { margin: 0 0 22px; padding: 4px 0 4px 20px; border-left: 3px solid var(--accent); }
+    .personalization-quote p { margin: 0 0 9px; font-family: var(--serif); font-size: 1rem; line-height: 1.65; color: #373b40; }
+    .personalization-quote cite { font-size: .84rem; font-style: normal; color: var(--muted); }
+    .personalization-description { margin: 0 0 23px; line-height: 1.7; color: #373b40; font-size: .98rem; }
+    .personalization-scale { border: 1px solid var(--line); border-radius: 8px; padding: 20px; margin: 0 0 34px; background: #fff; }
+    .personalization-scale-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+    .personalization-scale-step { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .personalization-scale-number { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; line-height: 1.2; }
+    .personalization-scale-step strong { font-size: .87rem; line-height: 1.25; }
+    .personalization-scale-snippet { max-width: 190px; font-family: var(--serif); font-style: italic; font-size: .82rem; line-height: 1.4; color: var(--muted); }
+    .personalization-scale-bar { margin-top: 21px; width: 100%; height: 5px; border-radius: 99px; background: linear-gradient(90deg,#dbd5d6,#a4727c,var(--accent)); }
+    .personalization-scale-ends { display: flex; justify-content: space-between; gap: 12px; margin-top: 9px; color: var(--muted); font-size: .76rem; }
+    .personalization-interactive h4 { margin: 0 0 8px; font-family: var(--serif); font-weight: 600; font-size: 1.13rem; }
+    .personalization-interactive > p { margin: 0 0 19px; line-height: 1.65; font-size: .98rem; color: #373b40; }
+    #personalization-form { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+    #personalization-form label { font-weight: 600; font-size: .87rem; }
+    #personalization-input { width: 100%; min-height: 110px; padding: 12px 13px; border: 1px solid #c9cdd0; border-radius: 5px; background: #fff; font: inherit; font-size: .95rem; line-height: 1.5; resize: vertical; }
+    #personalization-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .personalization-button { border: 0; border-radius: 5px; background: var(--accent); color: #fff; padding: 10px 18px; font-family: var(--sans); font-size: .9rem; font-weight: 600; cursor: pointer; }
+    .personalization-button:hover { background: var(--accent-dark); }
+    .personalization-button:disabled { opacity: .65; cursor: wait; }
+    .personalization-status { min-height: 1.4em; margin: 12px 0 0 !important; color: var(--muted); font-size: .87rem !important; }
+    .personalization-result { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; padding: 15px 18px; border: 1px solid var(--line); border-radius: 6px; background: var(--soft); font-size: .83rem; color: var(--muted); }
+    .personalization-result[hidden] { display: none; }
+    .personalization-result strong { color: var(--accent); font-family: var(--serif); font-size: 1.8rem; line-height: 1.25; }
+    @media (max-width:650px) {
+      .personalization-scale { padding: 13px; }
+      .personalization-scale-grid { gap: 8px; }
+      .personalization-scale-step strong { font-size: .76rem; }
+      .personalization-scale-snippet { font-size: .72rem; }
+      .personalization-scale-ends { font-size: .68rem; }
+    }
   </style>
 </head>
 <body>
@@ -395,20 +430,6 @@
         <div class="research-list">
           <div class="research-item">
             <div class="research-copy">
-              <h3>Political communication &amp; media</h3>
-              <p>How campaigns, media environments, and political messages shape what people notice, understand, and believe.</p>
-            </div>
-            <figure class="research-figure wordcloud-figure">
-              <div class="research-figure-title wordcloud-title">Most Used Words in Breitbart Headlines</div>
-              <img src="assets/research-wordcloud.png" alt="Word cloud of the most used words in Breitbart headlines, with large words including Trump and Biden.">
-              <figcaption class="research-caption">
-                Word cloud of Breitbart headlines, derived from a created database of over 400k Breitbart articles.
-                <span class="caption-source">Snyder, Jett, &amp; Hennes, <em>“Bread and Circuses: Structural Linguistic Features Associated with Media Engagement and the Case of Breitbart”</em> (in preparation).</span>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="research-item">
-            <div class="research-copy">
               <h3>Text-as-data &amp; artificial intelligence</h3>
               <p>Using computational text analysis and machine learning to measure political language and media content at scale.</p>
             </div>
@@ -419,6 +440,50 @@
                 <span class="caption-source">Snyder, <em>“There’s a Lot to Unpack There: Personalization in Political Language and Affective Polarization”</em> (under review).</span>
               </figcaption>
             </figure>
+
+            <div class="personalization-module">
+              <blockquote class="personalization-quote">
+                <p>&ldquo;The character of the objects that are central in a belief system... shift from the remote, generic, and abstract to the increasingly simple, concrete, or &lsquo;close to home.&rsquo; This progression tends to be from abstract, &lsquo;ideological&rsquo; principles to the more obviously recognizable social groupings or charismatic leaders and finally to such objects of immediate experience as family, job, and immediate associates.&rdquo;</p>
+                <cite>&mdash; Philip Converse (1964)</cite>
+              </blockquote>
+              <p class="personalization-description">Building on this framework, I developed a measure of <em>Ideological Personalization</em> that captures the extent to which political language moves from abstract principles, to recognizable political actors and groups, and then to concrete experiences and personal stakes.</p>
+              <div class="personalization-scale">
+                <div class="personalization-scale-grid">
+                  <div class="personalization-scale-step">
+                    <span class="personalization-scale-number">1</span>
+                    <strong>Abstract</strong>
+                    <span class="personalization-scale-snippet">&ldquo;abstract, &lsquo;ideological&rsquo; principles&rdquo;</span>
+                  </div>
+                  <div class="personalization-scale-step">
+                    <span class="personalization-scale-number">2</span>
+                    <strong>Political &amp; Social</strong>
+                    <span class="personalization-scale-snippet">&ldquo;social groupings or charismatic leaders&rdquo;</span>
+                  </div>
+                  <div class="personalization-scale-step">
+                    <span class="personalization-scale-number">3</span>
+                    <strong>Personally Grounded</strong>
+                    <span class="personalization-scale-snippet">&ldquo;family, job, and immediate associates&rdquo;</span>
+                  </div>
+                </div>
+                <div class="personalization-scale-bar" aria-hidden="true"></div>
+                <div class="personalization-scale-ends"><span>Less personalized</span><span>More personalized</span></div>
+              </div>
+              <div class="personalization-interactive">
+                <h4>Try the Personalization Measure</h4>
+                <p>To automate this measure, I fine-tuned a RoBERTa bounded-regression model on averaged ratings from three large language models, producing continuous personalization scores ranging from 1 (abstract) to 3 (personally grounded). Enter a political statement below to see how it rates on the personalization scale.</p>
+                <form id="personalization-form">
+                  <label for="personalization-input">Political statement</label>
+                  <textarea id="personalization-input" name="text" rows="4" maxlength="1500" placeholder="Enter a political statement..." required></textarea>
+                  <button class="personalization-button" type="submit">Analyze Personalization</button>
+                </form>
+                <p id="personalization-status" class="personalization-status" role="status" aria-live="polite"></p>
+                <div id="personalization-result" class="personalization-result" hidden>
+                  <span>Predicted personalization score</span>
+                  <strong id="personalization-score"></strong>
+                  <span>On a continuous scale from 1.00 (abstract) to 3.00 (personally grounded)</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="research-item">
             <div class="research-copy">
@@ -430,6 +495,20 @@
               <figcaption class="research-caption">
                 This experiment compares the effects of a dozen short-form depolarization videos created by non-profits.
                 <span class="caption-source">Snyder, <em>“Depolarization in Under 60 Seconds? Testing a Dozen Short-Form Video Interventions”</em> (2026).</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="research-item">
+            <div class="research-copy">
+              <h3>Political communication &amp; media</h3>
+              <p>How campaigns, media environments, and political messages shape what people notice, understand, and believe.</p>
+            </div>
+            <figure class="research-figure wordcloud-figure">
+              <div class="research-figure-title wordcloud-title">Most Used Words in Breitbart Headlines</div>
+              <img src="assets/research-wordcloud.png" alt="Word cloud of the most used words in Breitbart headlines, with large words including Trump and Biden.">
+              <figcaption class="research-caption">
+                Word cloud of Breitbart headlines, derived from a created database of over 400k Breitbart articles.
+                <span class="caption-source">Snyder, Jett, &amp; Hennes, <em>“Bread and Circuses: Structural Linguistic Features Associated with Media Engagement and the Case of Breitbart”</em> (in preparation).</span>
               </figcaption>
             </figure>
           </div>
@@ -483,5 +562,48 @@
     </div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    (function () {
+      const form = document.getElementById('personalization-form');
+      const input = document.getElementById('personalization-input');
+      const status = document.getElementById('personalization-status');
+      const result = document.getElementById('personalization-result');
+      const score = document.getElementById('personalization-score');
+      const button = form.querySelector('button');
+      // Public proxy URL only: no Modal credentials in GitHub.
+      const apiUrl = 'https://api.donnysnyder.org/';
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        const text = input.value.trim();
+        if (!text) return;
+        button.disabled = true;
+        result.hidden = true;
+        status.textContent = 'Analyzing your statement… The first prediction may take longer while the model starts.';
+        try {
+          const response = await fetch(apiUrl, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: text }), cache: 'no-store'
+          });
+          if (response.status === 429) {
+            status.textContent = 'Too many requests. Please try again in a minute.';
+            return;
+          }
+          if (!response.ok) throw new Error('Classifier unavailable');
+          const data = await response.json();
+          const prediction = Number(data.personalization_score);
+          if (!Number.isFinite(prediction) || prediction < 1 || prediction > 3) throw new Error('Invalid score');
+          score.textContent = prediction.toFixed(2) + ' / 3.00';
+          result.hidden = false;
+          status.textContent = '';
+        } catch (error) {
+          status.textContent = 'The classifier is temporarily unavailable. Please try again later.';
+        } finally {
+          button.disabled = false;
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

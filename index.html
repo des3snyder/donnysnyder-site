@@ -120,11 +120,13 @@
       display: flex;
       gap: 10px;
       align-items: center;
+      flex-wrap: wrap;
       color: #9a9da0;
       font-size: .93rem;
       font-weight: 650;
     }
     .quick-links a { text-decoration: none; }
+    #personalization-demo { scroll-margin-top: 95px; }
 
     .portrait-wrap {
       margin: 0;
@@ -403,6 +405,8 @@
           <a href="mailto:dsnyder01@wesleyan.edu">Email</a>
           <span>·</span>
           <a href="https://www.dropbox.com/scl/fi/8j04t2tje2q7c0xfvdh8b/Snyder-CV-2025.12.24.pdf?rlkey=br15vmpk8wf2d120ajpa04xqz&st=61su0dps&dl=0">CV</a>
+          <span>·</span>
+          <a href="#personalization-demo">Try My Personalization Measure</a>
         </div>
       </div>
       <figure class="portrait-wrap">
@@ -464,7 +468,7 @@
                 <div class="personalization-scale-ends"><span>Less personal</span><span>More personal</span></div>
               </div>
               <div class="personalization-interactive">
-                <h4>Try the Personalization Measure</h4>
+                <h4 id="personalization-demo">Try the Personalization Measure</h4>
                 <p>To automate this measure, I fine-tuned a RoBERTa bounded-regression model on averaged ratings from three large language models, producing continuous personalization scores ranging from 1 (abstract, ideological) to 3 (personal, close to home). Enter a political statement below to see how it rates on the personalization scale.</p>
                 <form id="personalization-form">
                   <label for="personalization-input">Political statement</label>

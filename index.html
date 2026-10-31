@@ -469,7 +469,7 @@
               </div>
               <div class="personalization-interactive">
                 <h4>Try the Personalization Measure</h4>
-                <p>To automate this measure, I fine-tuned a RoBERTa bounded-regression model on averaged ratings from three large language models, producing continuous personalization scores ranging from 1 (abstract, ideological) to 3 (personal, close to home). Enter a political statement below to see how it rates on the personalization scale.</p>
+                <p>To automate this measure, I averaged ratings from three large language models (LLMs) of over 63,000 ANES open-ended responses discussing likes and dislikes about the Democratic and Republican parties. I then trained a RoBERTa bounded-regression model on these ratings. Using an open-source architecture, the model produces a score ranging from 1 (abstract, ideological) to 3 (personal, close to home) for political text. This model is still a work in progress and was trained on ordinary individuals’ political responses in the ANES. Results may vary for out-of-bounds cases. To try it out, enter a political statement below to see how it rates on the personalization scale.</p>
                 <form id="personalization-form">
                   <label for="personalization-input">Political statement</label>
                   <textarea id="personalization-input" name="text" rows="2" maxlength="1500" placeholder="Enter a political statement..." required></textarea>

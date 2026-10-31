@@ -126,7 +126,7 @@
       font-weight: 650;
     }
     .quick-links a { text-decoration: none; }
-    #personalization-demo { scroll-margin-top: 95px; }
+    #personalization-demo { scroll-margin-top: 83px; }
 
     .portrait-wrap {
       margin: 0;
@@ -443,7 +443,7 @@
               </figcaption>
             </figure>
 
-            <div class="personalization-module">
+            <div class="personalization-module" id="personalization-demo">
               <blockquote class="personalization-quote">
                 <p>&ldquo;The character of the objects that are central in a belief system... shift from the remote, generic, and abstract to the increasingly simple, concrete, or &lsquo;close to home.&rsquo; This progression tends to be from abstract, &lsquo;ideological&rsquo; principles to the more obviously recognizable social groupings or charismatic leaders and finally to such objects of immediate experience as family, job, and immediate associates.&rdquo;</p>
                 <cite>&mdash; Philip Converse (1964)</cite>
@@ -468,7 +468,7 @@
                 <div class="personalization-scale-ends"><span>Less personal</span><span>More personal</span></div>
               </div>
               <div class="personalization-interactive">
-                <h4 id="personalization-demo">Try the Personalization Measure</h4>
+                <h4>Try the Personalization Measure</h4>
                 <p>To automate this measure, I fine-tuned a RoBERTa bounded-regression model on averaged ratings from three large language models, producing continuous personalization scores ranging from 1 (abstract, ideological) to 3 (personal, close to home). Enter a political statement below to see how it rates on the personalization scale.</p>
                 <form id="personalization-form">
                   <label for="personalization-input">Political statement</label>

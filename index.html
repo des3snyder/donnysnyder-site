@@ -574,6 +574,20 @@
       // Public proxy URL only: no Modal credentials in GitHub.
       const apiUrl = 'https://api.donnysnyder.org/';
 
+      // Prewarm only when a person focuses the text box, not on page load.
+      // This throwaway prediction is ignored; user input is not sent until Analyze.
+      // Only one warm-up is sent per page load.
+      input.addEventListener('focus', function () {
+        fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: 'Politics.' }),
+          cache: 'no-store'
+        }).catch(function () {
+          // Warm-up failure does not affect actual predictions.
+        });
+      }, { once: true });
+
       form.addEventListener('submit', async function (event) {
         event.preventDefault();
         const text = input.value.trim();

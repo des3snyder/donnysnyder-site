@@ -165,6 +165,10 @@
     }
 
     .prose { max-width: 1110px; }
+    /* Give About a little extra room on wide desktop screens only. */
+    @media (min-width: 1250px) {
+      .prose { width: calc(100% + 32px); max-width: 1142px; }
+    }
     .prose p {
       margin: 0 0 16px;
       color: #373b40;

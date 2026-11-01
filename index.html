@@ -164,7 +164,7 @@
       background: var(--accent);
     }
 
-    .prose { max-width: 1060px; }
+    .prose { max-width: 1110px; }
     .prose p {
       margin: 0 0 16px;
       color: #373b40;
@@ -186,7 +186,7 @@
       border-bottom: 0;
     }
     .research-copy {
-      max-width: 1060px;
+      max-width: 1110px;
       margin-bottom: 22px;
     }
     .research-copy h3 {
@@ -253,7 +253,7 @@
     }
 
     .publications-section { background: var(--soft); }
-    .publication-block { max-width: 1060px; }
+    .publication-block { max-width: 1110px; }
     .pub-heading {
       display: flex;
       align-items: center;
@@ -347,8 +347,18 @@
       .footer-links { flex-direction: column; align-items: flex-start; gap: 3px; }
     }
 
+    /* Slightly larger body copy on desktop; preserve mobile text sizing. */
+    @media (min-width: 851px) {
+      .prose p,
+      .research-copy p,
+      .personalization-description,
+      .personalization-quote p,
+      .personalization-interactive > p { font-size: 1.0625rem; }
+      .pub-list li { font-size: 1.0275rem; }
+    }
+
     /* Scoped styles: Converse research demo only */
-    .personalization-module { max-width: 1060px; margin-top: 25px; }
+    .personalization-module { max-width: 1110px; margin-top: 25px; }
     .personalization-quote { margin: 0 0 22px; padding: 4px 0 4px 20px; border-left: 3px solid var(--accent); }
     .personalization-quote p { margin: 0 0 9px; font-family: var(--serif); font-size: 1rem; line-height: 1.65; color: #373b40; }
     .personalization-quote cite { font-size: .84rem; font-style: normal; color: var(--muted); }

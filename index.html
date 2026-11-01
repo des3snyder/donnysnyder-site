@@ -32,7 +32,7 @@
       color: var(--ink);
       background: #fff;
       font-family: var(--sans);
-      font-size: 21px;
+      font-size: 19px;
       line-height: 1.68;
       -webkit-font-smoothing: antialiased;
     }
@@ -64,14 +64,14 @@
     .brand {
       color: var(--ink);
       font-family: var(--serif);
-      font-size: 1.295rem;
+      font-size: 1.17rem;
       font-weight: 700;
       text-decoration: none;
     }
     nav { display: flex; gap: 28px; }
     nav a {
       color: #45494e;
-      font-size: 1.025rem;
+      font-size: 1.125rem;
       font-weight: 600;
       text-decoration: none;
     }
@@ -96,7 +96,7 @@
     h1 {
       margin: 0 0 16px;
       font-family: var(--serif);
-      font-size: clamp(3.225rem, calc(6vw + 2px), 4.825rem);
+      font-size: clamp(3.1rem, 6vw, 4.7rem);
       font-weight: 500;
       line-height: 1.02;
       letter-spacing: -.035em;
@@ -104,7 +104,7 @@
     .position {
       margin: 0 0 28px;
       color: var(--muted);
-      font-size: 1.205rem;
+      font-size: 1.125rem;
       line-height: 1.5;
     }
     .position a { color: inherit; }
@@ -113,7 +113,7 @@
       max-width: 720px;
       color: #363a3e;
       font-family: var(--serif);
-      font-size: 1.465rem;
+      font-size: 1.34rem;
       line-height: 1.5;
     }
     .quick-links {
@@ -122,7 +122,7 @@
       align-items: center;
       flex-wrap: wrap;
       color: #9a9da0;
-      font-size: 1.055rem;
+      font-size: 1.125rem;
       font-weight: 650;
     }
     .quick-links a { text-decoration: none; }
@@ -219,7 +219,7 @@
     .research-figure-title {
       margin: 0 0 9px;
       color: var(--ink);
-      font-size: 1.005rem;
+      font-size: 1.125rem;
       font-weight: 600;
       line-height: 1.3;
       text-align: left;
@@ -283,7 +283,7 @@
       margin-bottom: 17px;
       border-bottom: 1px solid #dededb;
       color: #404449;
-      font-size: 1.09rem;
+      font-size: 1.125rem;
       line-height: 1.62;
     }
     .pub-list li:last-child { margin-bottom: 0; }
@@ -318,12 +318,12 @@
     }
 
     @media (max-width: 650px) {
-      body { font-size: 19px; }
+      body { font-size: 18px; }
       .container { width: min(var(--max), calc(100% - 34px)); }
       .site-header { position: static; }
       .nav-row { padding: 15px 0; align-items: flex-start; flex-direction: column; gap: 10px; }
       nav { gap: 17px; flex-wrap: wrap; }
-      nav a { font-size: 0.945rem; }
+      nav a { font-size: 1.125rem; }
       .intro {
         grid-template-columns: 1fr;
         gap: 35px;
@@ -337,24 +337,14 @@
         justify-self: start;
       }
       .portrait { width: 210px; height: 270px; }
-      h1 { font-size: clamp(2.925rem, calc(15vw + 2px), 4.125rem); }
-      .intro-text { font-size: 1.325rem; }
+      h1 { font-size: clamp(2.8rem, 15vw, 4rem); }
+      .intro-text { font-size: 1.2rem; }
       .section-inner { grid-template-columns: 1fr; gap: 24px; padding: 43px 0 47px; }
       .section-title { font-size: 1.525rem; }
       .section-title::after { margin-top: 10px; }
       .pub-heading { font-size: 1.325rem; }
       .footer-row { min-height: 155px; align-items: flex-start; justify-content: center; flex-direction: column; gap: 10px; }
       .footer-links { flex-direction: column; align-items: flex-start; gap: 3px; }
-    }
-
-    /* Slightly larger body copy on desktop; preserve mobile text sizing. */
-    @media (min-width: 851px) {
-      .prose p,
-      .research-copy p,
-      .personalization-description,
-      .personalization-quote p,
-      .personalization-interactive > p { font-size: 1.1875rem; }
-      .pub-list li { font-size: 1.1525rem; }
     }
 
     /* Scoped styles: Converse research demo only */
@@ -367,27 +357,27 @@
     .personalization-scale-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
     .personalization-scale-step { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 3px; }
     .personalization-scale-number { font-family: var(--serif); font-size: 1.375rem; font-weight: 600; line-height: 1.2; }
-        .personalization-scale-snippet { max-width: 230px; font-family: var(--serif); font-style: italic; font-size: 0.925rem; line-height: 1.35; color: var(--muted); }
+        .personalization-scale-snippet { max-width: 230px; font-family: var(--serif); font-style: italic; font-size: 1.125rem; line-height: 1.35; color: var(--muted); }
     .personalization-scale-bar { margin-top: 12px; width: 100%; height: 4px; border-radius: 99px; background: linear-gradient(90deg,#dbd5d6,#a4727c,var(--accent)); }
-    .personalization-scale-ends { display: flex; justify-content: space-between; gap: 12px; margin-top: 6px; color: var(--muted); font-size: 0.885rem; }
+    .personalization-scale-ends { display: flex; justify-content: space-between; gap: 12px; margin-top: 6px; color: var(--muted); font-size: 1.125rem; }
     .personalization-interactive h4 { margin: 0 0 8px; font-family: var(--serif); font-weight: 600; font-size: 1.255rem; }
     .personalization-interactive > p { margin: 0 0 19px; line-height: 1.65; font-size: 1.125rem; color: #373b40; }
     #personalization-form { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
-    #personalization-form label { font-weight: 600; font-size: 0.995rem; }
-    #personalization-input { width: 100%; min-height: 66px; height: 66px; padding: 9px 13px; border: 1px solid #c9cdd0; border-radius: 5px; background: #fff; font: inherit; font-size: 1.075rem; line-height: 1.5; resize: vertical; }
+    #personalization-form label { font-weight: 600; font-size: 1.125rem; }
+    #personalization-input { width: 100%; min-height: 66px; height: 66px; padding: 9px 13px; border: 1px solid #c9cdd0; border-radius: 5px; background: #fff; font: inherit; font-size: 1.125rem; line-height: 1.5; resize: vertical; }
     #personalization-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .personalization-button { border: 0; border-radius: 5px; background: var(--accent); color: #fff; padding: 10px 18px; font-family: var(--sans); font-size: 1.025rem; font-weight: 600; cursor: pointer; }
+    .personalization-button { border: 0; border-radius: 5px; background: var(--accent); color: #fff; padding: 10px 18px; font-family: var(--sans); font-size: 1.125rem; font-weight: 600; cursor: pointer; }
     .personalization-button:hover { background: var(--accent-dark); }
     .personalization-button:disabled { opacity: .65; cursor: wait; }
-    .personalization-status { min-height: 1.4em; margin: 12px 0 0 !important; color: var(--muted); font-size: 0.995rem !important; }
-    .personalization-result { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; padding: 15px 18px; border: 1px solid var(--line); border-radius: 6px; background: var(--soft); font-size: 0.955rem; color: var(--muted); }
+    .personalization-status { min-height: 1.4em; margin: 12px 0 0 !important; color: var(--muted); font-size: 1.125rem !important; }
+    .personalization-result { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; padding: 15px 18px; border: 1px solid var(--line); border-radius: 6px; background: var(--soft); font-size: 1.125rem; color: var(--muted); }
     .personalization-result[hidden] { display: none; }
     .personalization-result strong { color: var(--accent); font-family: var(--serif); font-size: 1.925rem; line-height: 1.25; }
     @media (max-width:650px) {
       .personalization-scale { padding: 13px; }
       .personalization-scale-grid { gap: 8px; }
-      .personalization-scale-snippet { font-size: 0.845rem; }
-      .personalization-scale-ends { font-size: 0.805rem; }
+      .personalization-scale-snippet { font-size: 1.125rem; }
+      .personalization-scale-ends { font-size: 1.125rem; }
     }
   </style>
 </head>

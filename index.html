@@ -145,7 +145,7 @@
     .section-inner {
       display: grid;
       grid-template-columns: 125px minmax(0, 1fr);
-      gap: 18px;
+      gap: 42px;
       padding: 45px 0 49px;
     }
     .section-title {
@@ -207,6 +207,7 @@
       width: 100%;
       max-width: 820px;
     }
+    .research-scatter-figure { max-width: 755px; }
     .research-figure img {
       width: 100%;
       max-height: none;
@@ -332,7 +333,7 @@
       .intro { grid-template-columns: minmax(0, 1fr) 250px; gap: 35px; min-height: 450px; }
       .portrait-wrap, .portrait { width: 250px; }
       .portrait { height: 320px; }
-      .section-inner { grid-template-columns: 116px minmax(0,1fr); gap: 17px; }
+      .section-inner { grid-template-columns: 116px minmax(0,1fr); gap: 27px; }
     }
 
     @media (max-width: 650px) {
@@ -453,7 +454,7 @@
               <h3>Text-as-data &amp; artificial intelligence</h3>
               <p>Using computational text analysis and machine learning to measure political language and media content at scale.</p>
             </div>
-            <figure class="research-figure">
+            <figure class="research-figure research-scatter-figure">
               <div class="research-scatter-crop">
                 <img src="assets/research-human-machine.png" alt="Scatterplot comparing machine ensemble ratings with average human ratings.">
               </div>
